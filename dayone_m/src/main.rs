@@ -17,7 +17,13 @@ fn fib(n: u32) -> u32 {
     }
 }
 
+mod gcd;
+use crate::gcd::gcd::find_gcd;
+
 fn main() {
     let n = 20;
+    // println!("gcd: {}", find_gcd(52, 143));
+    // println!("gcd: {}", find_gcd(143, 52));
+    
     println!("fib({n}) = {}", fib(n));
 }
