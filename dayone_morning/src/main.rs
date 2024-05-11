@@ -22,6 +22,20 @@ mod gcd;
 use crate::gcd::gcd::{find_gcd, factorial};
 
 
+/// Determine the length of the collatz sequence beginning at `n`.
+fn collatz_length(mut n: u32) -> u32 {
+    if n == 1 {
+        println!("{}",n);
+        return 1;
+    } else if n % 2 == 0 {
+        println!("{}",n);
+        collatz_length(n/2)
+    } else {
+        println!("{}",n);
+        collatz_length((n*3)+1)
+    }
+}
+
 fn main() {
 
     // exercise 1 
@@ -36,7 +50,7 @@ fn main() {
     // exercise 1 end
 
     // exercise 2
-    todo!();
+    collatz_length(3);
 
     // exercize 2 end
 
