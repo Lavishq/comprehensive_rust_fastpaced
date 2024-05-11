@@ -18,12 +18,28 @@ fn fib(n: u32) -> u32 {
 }
 
 mod gcd;
-use crate::gcd::gcd::find_gcd;
+// use crate::gcd::gcd::find_gcd;
+use crate::gcd::gcd::{find_gcd, factorial};
+
 
 fn main() {
+
+    // exercise 1 
+
     let n = 20;
     // println!("gcd: {}", find_gcd(52, 143));
     // println!("gcd: {}", find_gcd(143, 52));
+    // todo!();
     
     println!("fib({n}) = {}", fib(n));
+
+    // exercise 1 end
+
+    // exercise 2
+    todo!();
+
+    // exercize 2 end
+
+    let n = 4;
+    println!("{n}! = {}", factorial(n));
 }

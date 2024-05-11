@@ -9,4 +9,20 @@ pub mod gcd {
             a
         }
     }
+
+    // dbg eg
+    pub fn factorial(n: u32) -> u32 {
+        let mut product = 1;
+        for i in 1..=n {
+            // product *= dbg!(i);
+            product *= i;
+        }
+        product
+    }
+    
+    // todo eg
+    pub fn fizzbuzz(n: u32) -> u32 {
+        todo!()
+    }
+    
 }
