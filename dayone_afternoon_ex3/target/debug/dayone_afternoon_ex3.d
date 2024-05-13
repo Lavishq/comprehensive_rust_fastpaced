@@ -1,0 +1,1 @@
+/home/lavishq/comprehensive_rust_fastpaced/dayone_afternoon_ex3/target/debug/dayone_afternoon_ex3: /home/lavishq/comprehensive_rust_fastpaced/dayone_afternoon_ex3/src/main.rs

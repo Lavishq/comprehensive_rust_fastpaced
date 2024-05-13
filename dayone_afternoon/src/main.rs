@@ -1,4 +1,6 @@
+
 fn main() {
+    // ##### excersize 1
     println!("Hello, world!");
     let matrix = [
         [101, 102, 103], // <-- the comment makes rustfmt add a newline
@@ -9,6 +11,25 @@ fn main() {
     // println!("matrix: {:#?}", matrix);
     let transposed = transpose(matrix);
     println!("transposed: {:#?}", transposed);
+    // ##### exersize end
+
+    // practise difficulties
+    let s1: &str = "World";
+    println!("s1: {s1}");
+
+    let mut s2: String = String::from("Hello ");
+    println!("s2: {s2}");
+    s2.push_str(s1);
+    println!("s2: {s2}");
+
+    // s3 is difficult to grasp since it is taking the ref of s2 and then using len(s2) which is 11, further subtracting s1.len (6) also uses '..' at end so def have to study this
+    // but i understand it as it is doing 11-6 then from 5th index to rest, i made up s4 for making it ez
+    let s3: &str = &s2[s2.len() - s1.len()..];
+    let s4: &str = &s2[s2.len() - 2..];
+    println!("s3: {s3}");
+    println!("s4: {s4}");
+
+    println!(r"\n");// == "\\n"
 }
 
 // # Excersize 1 : Nested Arrays
