@@ -18,20 +18,35 @@ enum Expression {
 }
 
 fn eval(e: Expression) -> Result<i64, String> {
-    todo!();
-    // if e.Op.op == Operation::Add {
-    //     e.Op.left + e.Op.right
-    // }
+    // todo!();
+    if let Expression::Value(v) = e {
+        Ok(v)
+    } else if let Expression::Op { op, left, right } = e {
+        let left_val = eval(*left)?;
+        let right_val = eval(*right)?;
+        match op {
+            Operation::Add => Ok(left_val + right_val),
+            Operation::Sub => Ok(left_val - right_val),
+            Operation::Mul => Ok(left_val * right_val),
+            Operation::Div => {
+                if right_val == 0 {
+                    Err("division by zero".to_string()) // Change to lowercase 'd'
+                } else {
+                    Ok(left_val / right_val)
+                }
+            }
+        }
+    } else {
+        Err("Invalid expression".to_string())
+    }
 }
 
 #[test]
-#[ignore]
 fn test_value() {
     assert_eq!(eval(Expression::Value(19)), Ok(19));
 }
 
 #[test]
-#[ignore]
 fn test_sum() {
     assert_eq!(
         eval(Expression::Op {
@@ -44,7 +59,6 @@ fn test_sum() {
 }
 
 #[test]
-#[ignore]
 fn test_recursion() {
     let term1 = Expression::Op {
         op: Operation::Mul,
@@ -71,7 +85,6 @@ fn test_recursion() {
 }
 
 #[test]
-#[ignore]
 fn test_error() {
     assert_eq!(
         eval(Expression::Op {
